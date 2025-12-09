@@ -1,0 +1,1014 @@
+        /* --- 1. CORE VARIABLES & BASICS --- */
+        :root {
+            --bg-dark: #050505;
+            --bg-secondary: #0f0f0f;
+            --primary-red: #c5470b;
+            --accent-gold: #C5A059;
+            --text-light: #F8F9FA;
+            --text-muted: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .text-red {
+            color: var(--primary-red) !important;
+        }
+
+        .text-gold {
+            color: var(--accent-gold) !important;
+        }
+
+        .bg-red {
+            background: var(--primary-red);
+        }
+
+        .bg-darker {
+            background-color: #020202;
+        }
+
+        /* Scroll Reveal Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 2. NAVBAR (Complete Fix) --- */
+        .navbar {
+            /* background: linear-gradient(to right, rgb(255, 255, 255), rgba(0, 0, 0, 0.9)); */
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 17%, rgba(255, 255, 255, 0.8) 24%, rgba(255, 255, 255, 0) 67%, rgba(33, 33, 33, 1) 100%);
+            backdrop-filter: blur(20px);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            max-height: 110px;
+        }
+
+        /* Logo Handling */
+        .logo-box {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 9999999999999;
+        }
+
+        .nav-logo {
+            height: 80px;
+            /* Size Fix */
+            width: auto;
+            object-fit: contain;
+            opacity: 1;
+            mix-blend-mode: normal !important;
+            filter: none;
+            z-index: 9999999999;
+            /* filter: invert(1); */
+            /* BLEND MODE FIX: Makes white box transparent on dark bg */
+            /* mix-blend-mode: screen; */
+            /* box-shadow: 0 4px 15px rgba(0,0,0,0.3); */
+        }
+
+        /* Nav Links */
+        .navbar .nav-link {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b0b0b0 !important;
+            margin: 0 12px;
+            font-weight: 400;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: white !important;
+        }
+
+        /* Red Underline Effect */
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0%;
+            height: 1px;
+            background: var(--primary-red);
+            transition: 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* --- 3. DROPDOWN FIXES (Arrow & Layout) --- */
+
+        /* --- NAVBAR CORE --- */
+        /* .navbar {
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(20px);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    min-height: 90px;
+} */
+
+        /* --- LOGO FIX --- */
+        .logo-box {
+            display: flex;
+            align-items: center;
+            opacity: 1;
+
+        }
+
+        .nav-logo {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+            /* REMOVED mix-blend-mode: screen; so the text inside the logo box is visible */
+        }
+
+        /* --- LINKS STYLING --- */
+        .navbar .nav-link {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff !important;
+            margin: 0 12px;
+            font-weight: 400;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: white !important;
+        }
+
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0%;
+            height: 1px;
+            background: #D9381E;
+            /* Your primary red */
+            transition: 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* --- DROPDOWN LOGIC (The Fix) --- */
+
+        /* 1. General Dropdown Styling */
+        .dropdown-menu {
+            background-color: #050505;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            padding: 10px 0;
+            margin-top: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            /* Note: We do NOT use display:none here globally anymore */
+        }
+
+        .dropdown-item {
+            color: #b0b0b0;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            background: transparent;
+            transition: 0.3s;
+        }
+
+        .dropdown-item:hover {
+            color: #D9381E;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding-left: 25px;
+        }
+
+        /* 2. Arrow Icon Styling */
+        .navbar .dropdown-toggle::after {
+            display: none !important;
+            /* Hide default Bootstrap triangle */
+        }
+
+        .nav-arrow {
+            font-size: 0.7rem;
+            margin-left: 6px;
+            transition: transform 0.3s ease;
+            vertical-align: middle;
+            color: #D9381E;
+        }
+
+        /* --- DESKTOP ONLY (Hover Effects) --- */
+        @media (min-width: 992px) {
+
+            /* Hide menu by default on desktop so we can control it with hover */
+            .dropdown-menu {
+                display: none;
+            }
+
+            /* Show on Hover */
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+
+            .nav-item.dropdown:hover .nav-arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        /* --- MOBILE ONLY (Click Effects) --- */
+        @media (max-width: 991px) {
+
+            /* 1. Reset Dropdown Styling for Mobile */
+            .dropdown-menu {
+                background-color: rgba(255, 255, 255, 0.03);
+                /* Subtle background to group items */
+                border: none;
+                box-shadow: none;
+
+                /* FIX: Remove padding-left so text stays perfectly centered */
+                padding-left: 0;
+                text-align: center;
+
+                /* Add spacing so it doesn't look cramped */
+                margin-top: 5px;
+                margin-bottom: 10px;
+                border-radius: 8px;
+            }
+
+            /* 2. Style the Sub-items (Spices, Herbs) */
+            .dropdown-item {
+                color: #b0b0b0;
+                font-size: 0.75rem;
+                /* Slightly smaller to distinguish from main links */
+                padding: 10px 0;
+                /* Vertical spacing */
+            }
+
+            .dropdown-item:hover {
+                background-color: transparent;
+                color: #D9381E;
+            }
+
+            /* 3. Rotate arrow when clicked */
+            .nav-link.show .nav-arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- HEADER ICONS (Login & Cart) --- */
+        .nav-icon-btn {
+            color: white;
+            font-size: 1.1rem;
+            margin-left: 15px;
+            text-decoration: none;
+            position: relative;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-icon-btn:hover {
+            color: var(--primary-red);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary-red);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #050505;
+        }
+
+        /* --- 3. HERO SLIDER --- */
+        .carousel-items {
+            height: 100vh;
+            background-color: #000;
+        }
+
+        .carousel-img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, #050505 90%);
+            z-index: 1;
+        }
+
+        .hero-img {
+            object-fit: cover;
+            height: 100vh;
+            width: 100%;
+            opacity: 0.6;
+        }
+
+        .carousel-caption {
+            bottom: 30%;
+            z-index: 2;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-big-text {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: slideUp 1s ease forwards 0.5s;
+        }
+
+        .hero-sub-text {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: slideUp 1s ease forwards 0.2s;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .btn-red-glow {
+            background: var(--primary-red);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+            margin-top: 30px;
+        }
+
+        .btn-red-glow:hover {
+            box-shadow: 0 0 30px rgba(211, 47, 47, 0.6);
+            background: #b71c1c;
+            color: white;
+        }
+
+        .bg-red:hover {
+            box-shadow: 0 0 30px rgba(211, 47, 47, 0.6);
+            background: #b71c1c;
+        }
+
+        /* --- 4. WHY SPECIAL --- */
+        .special-card {
+            background: linear-gradient(145deg, #0f0f0f, #050505);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.4s;
+            height: 100%;
+            position: relative;
+        }
+
+        .special-card:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-10px);
+        }
+
+        .special-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary-red);
+            transition: 0.4s;
+        }
+
+        .special-card:hover::after {
+            width: 100%;
+        }
+
+        .special-icon {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        /* --- 5. BROKEN GRID --- */
+        .broken-grid-section {
+            padding: 50px 0;
+            position: relative;
+        }
+
+        .vertical-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(211, 47, 47, 0.3);
+            z-index: 0;
+        }
+
+        .image-box-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-box {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            /* filter: grayscale(100%); */
+            transition: 0.5s;
+        }
+
+        .image-box:hover {
+            filter: grayscale(0%);
+        }
+
+        .content-box {
+            background: #111;
+            padding: 40px;
+            border-left: 3px solid var(--primary-red);
+            position: relative;
+            z-index: 2;
+            margin-top: -50px;
+            margin-left: -30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .content-box-right {
+            margin-left: 0;
+            margin-right: -30px;
+            margin-top: -50px;
+            border-left: none;
+            border-right: 3px solid var(--primary-red);
+        }
+
+        /* --- 6. TESTIMONIALS --- */
+        .testimonial-section {
+            background-color: #020202;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(211, 47, 47, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .testi-card {
+            background: linear-gradient(145deg, #111111, #0a0a0a);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem 2.5rem;
+            position: relative;
+            border-left: 3px solid var(--primary-red);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .watermark-quote {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.03);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testi-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+        }
+
+        .client-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-red);
+            margin-right: 15px;
+        }
+
+        .star-rating {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .custom-nav-btns {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 5;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            transition: 0.3s;
+            margin-left: 8px;
+            font-size: 0.8rem;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        /* --- 7. BLOG --- */
+        .blog-card {
+            background: transparent;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .blog-img-container {
+            overflow: hidden;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .blog-card:hover .blog-img {
+            transform: scale(1.1);
+        }
+
+        .blog-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-red);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .blog-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-red);
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .blog-link:hover {
+            color: white;
+            border-bottom-color: white;
+        }
+
+        /* --- 8. PRODUCT LISTING & TABS --- */
+        .product-section {
+            padding: 50px 0;
+            background: linear-gradient(to bottom, #050505, #0a0a0a);
+        }
+
+        .prod-card {
+            background: transparent;
+            border: none;
+            position: relative;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .prod-img-wrap {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            aspect-ratio: 1 / 1;
+        }
+
+        .prod-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .prod-card:hover .prod-img {
+            transform: scale(1.1);
+            filter: brightness(0.7);
+        }
+
+        .prod-icons-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 3;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease-out;
+        }
+
+        .prod-card:hover .prod-icons-bar {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .icon-btn {
+            width: 45px;
+            height: 45px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .icon-btn:hover {
+            background: var(--primary-red);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .icon-btn:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: -35px;
+            background: var(--primary-red);
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 2px;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .prod-details {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .prod-cat {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .prod-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .prod-title:hover {
+            color: var(--primary-red);
+        }
+
+        .prod-price {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .badge-new {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 5px 12px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        /* --- CUSTOM TABS (For Products) --- */
+        /* These styles will no longer conflict with the Navbar */
+        .custom-tabs {
+            border: none;
+            gap: 20px;
+        }
+
+        .custom-tabs .nav-link {
+            background: transparent !important;
+            border: none;
+            border-radius: 0;
+            color: var(--text-muted);
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            padding: 0 0 5px 0;
+            position: relative;
+            transition: all 0.3s;
+            /* Reset specific header styles just in case */
+            margin: 0;
+        }
+
+        .custom-tabs .nav-link:hover {
+            color: white;
+        }
+
+        .custom-tabs .nav-link.active {
+            color: white;
+            background: transparent;
+            font-weight: 600;
+        }
+
+        /* The Red Underline for Tabs */
+        .custom-tabs .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-red);
+            box-shadow: 0 0 10px var(--primary-red);
+            transform: none;
+            /* Reset transform from navbar if needed */
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid #222;
+            padding-top: 80px;
+        }
+
+        .social-media a {
+            color: white;
+        }
+
+        .social-media a:hover {
+            color: var(--primary-red);
+            transition: 0.3s ease;
+        }
+
+        /* --- FOOTER UNIQUE LINKS --- */
+        .footer-link-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-link-animated {
+            color: var(--text-muted) !important;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 0;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Bouncy smooth transition */
+            position: relative;
+        }
+
+        /* Hover State: Slide text right & turn white */
+        .footer-link-animated:hover {
+            color: white !important;
+            transform: translateX(20px);
+            /* Moves text to make room for arrow */
+        }
+
+        /* The Hidden Arrow */
+        .footer-link-animated::before {
+            content: '\f178';
+            /* FontAwesome Arrow Icon code */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: -20px;
+            /* Start hidden off-screen */
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-red);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover State: Bring arrow in */
+        .footer-link-animated:hover::before {
+            left: -15px;
+            /* Move into view (relative to the moved text) */
+            opacity: 1;
+        }
+
+        /* Optional: "HOT" Badge style */
+        .badge-hot {
+            font-size: 0.6rem;
+            background: var(--primary-red);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 2px;
+            margin-left: 8px;
+            vertical-align: middle;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+
+
+        /* Dark Theme Base */
+        .timeline-section {
+            background-color: #000;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* The Vertical Line */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Create the line using pseudo-element */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #000, #c5470b, #000);
+            /* Fades in/out */
+            z-index: 0;
+        }
+
+        /* Individual Items */
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            z-index: 1;
+        }
+
+        /* The Glowing Dot on the line */
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* Center vertically relative to the item */
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border: 2px solid #c5470b;
+            /* Red border */
+            border-radius: 50%;
+            box-shadow: 0 0 15px #c5470b;
+            /* Red Glow */
+            z-index: 2;
+        }
+
+        /* Video Card Styling */
+        .video-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            border: 1px solid #222;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #000;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #c5470b;
+            box-shadow: 0 0 30px rgba(197, 71, 11, 0.3);
+
+        }
+
+        /* Text Styling */
+        .text-content h3 {
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        /* --- MOBILE ADJUSTMENTS (Important!) --- */
+        @media (max-width: 991px) {
+
+            /* Hide the line on mobile */
+            .timeline::before {
+                left: 20px;
+                /* Move line to left side */
+                background: #222;
+            }
+
+            .timeline-dot {
+                left: 20px;
+                /* Move dot to left side */
+                top: 0;
+                transform: translate(-50%, 0);
+            }
+
+            .timeline-item {
+                padding-left: 50px;
+                /* Make room for the line on the left */
+                margin-bottom: 60px;
+            }
+
+            /* Reset text alignment on mobile */
+            .text-lg-end {
+                text-align: left !important;
+            }
+
+            /* Remove huge padding */
+            .text-content {
+                padding: 0 !important;
+            }
+        }
