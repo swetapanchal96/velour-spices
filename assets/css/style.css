@@ -1854,3 +1854,98 @@ select.custom-input {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+
+/* Section Image Container */
+.about-image-wrapper {
+    position: relative;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.main-about-img {
+    border: 1px solid #222; /* Subtle border for black on black visibility */
+}
+
+/* Badge for Dark Theme */
+.experience-badge-dark {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--primary-red);
+    color: white;
+    padding: 20px 30px;
+    border: 2px solid var(--bg-dark); /* Separation from image */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,1);
+}
+
+/* Pills for Dark Theme */
+.feature-pill-dark {
+    background: #151515; /* Only slightly lighter than black */
+    border: 1px solid #222;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+/* Dark Promise Cards */
+.promise-line-red {
+    height: 2px;
+    width: 60px;
+    background: var(--primary-red);
+}
+
+.promise-card-dark {
+    background: #080808; /* Very deep black */
+    padding: 50px 30px;
+    border: 1px solid #1a1a1a;
+    text-align: center;
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.promise-card-dark.active, .promise-card-dark:hover {
+    border-color: var(--accent-gold);
+    background: #0c0c0c;
+    transform: translateY(-5px);
+}
+
+.icon-circle-gold {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 auto;
+    border: 1px solid var(--accent-gold);
+    border-radius: 50%;
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    background: rgba(197, 160, 89, 0.05); /* Very subtle gold glow */
+}
+
+
+.policy-wrapper {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-radius: 4px;
+}
+
+.policy-item h4 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.policy-item p {
+    line-height: 1.8;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* Custom list styling */
+.policy-item ul li {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+}
