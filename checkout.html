@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velour Spices | Premium Spices</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@200;300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-box">
+                    <img src="assets/image/velour-01.png" alt="RedSpice Logo" class="nav-logo">
+                </div>
+            </a>
+
+            <div class="d-flex align-items-center d-lg-none ms-auto me-3">
+                <a href="#" class="nav-icon-btn"><i class="far fa-user"></i></a>
+                <a href="#" class="nav-icon-btn"><i class="fas fa-shopping-bag"></i><span
+                        class="cart-badge">2</span></a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Shop <i class="fas fa-chevron-down nav-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="shopDropdown">
+                            <li><a class="dropdown-item" href="product-list.html"> Spices</a></li>
+                            <li><a class="dropdown-item" href="#">Herbs</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Recipe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                </ul>
+
+                <div class="d-none d-lg-flex align-items-center">
+                    <a href="#" class="nav-icon-btn"><i class="far fa-user"></i></a>
+                    <a href="cart.html" class="nav-icon-btn ms-4"><i class="fas fa-shopping-bag"></i><span
+                            class="cart-badge">2</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- breadcrumb -->
+    <section class="breadcrumb-aromatic d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title mb-3 reveal">Checkout</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <!-- <li class="breadcrumb-item"><a href="#">Shop</a></li> -->
+                            <li class="breadcrumb-item active " aria-current="page">Checkout</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkout-section py-5">
+        <div class="container">
+            <form action="#">
+                <div class="row">
+
+                    <div class="col-lg-7 mb-5 mb-lg-0">
+                        <h3 class="serif-font text-white mb-4 border-bottom border-secondary pb-3">Billing Details</h3>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label custom-label">Phone *</label>
+                                <input type="tel" class="form-control custom-input" id="phone"
+                                    placeholder="10-digit mobile number" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label custom-label">First Name *</label>
+                                <input type="text" class="form-control custom-input" id="firstName"
+                                    placeholder="Enter first name" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label custom-label">Last Name *</label>
+                                <input type="text" class="form-control custom-input" id="lastName"
+                                    placeholder="Enter last name" required>
+                            </div>
+
+                            
+
+                            <div class="col-md-6">
+                                <label for="email" class="form-label custom-label">Email Address *</label>
+                                <input type="email" class="form-control custom-input" id="email"
+                                    placeholder="name@example.com" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address" class="form-label custom-label">Street Address *</label>
+                                <input type="text" class="form-control custom-input mb-3" id="address"
+                                    placeholder="House number and street name" required>
+                                <input type="text" class="form-control custom-input" id="address2"
+                                    placeholder="Apartment, suite, unit, etc. (optional)">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="city" class="form-label custom-label">Town / City *</label>
+                                <input type="text" class="form-control custom-input" id="city" required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="state" class="form-label custom-label">State *</label>
+                                <select class="form-select custom-input" id="state" required>
+                                    <option value="" selected disabled>Select State</option>
+                                    <option>Gujarat</option>
+                                    <option>Maharashtra</option>
+                                    <option>Rajasthan</option>
+                                    <option>Delhi</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="zip" class="form-label custom-label">PIN Code *</label>
+                                <input type="text" class="form-control custom-input" id="zip" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="notes" class="form-label custom-label">Order Notes (Optional)</label>
+                                <textarea class="form-control custom-input" id="notes" rows="4"
+                                    placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 ps-lg-5">
+                        <div class="order-summary-card">
+                            <h4 class="serif-font text-white mb-4">Your Order</h4>
+
+                            <div class="d-flex justify-content-between border-bottom border-secondary pb-2 mb-3">
+                                <span class="text-uppercase small letter-spacing-2">Product</span>
+                                <span class="text-uppercase small letter-spacing-2">Subtotal</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <h6 class="text-white mb-0">Kashmiri Red Chilli</h6>
+                                    <span class="text-red small">Qty: 1 x ₹450</span>
+                                </div>
+                                <span class="text-light">₹ 450.00</span>
+                            </div>
+
+                            <div
+                                class="d-flex justify-content-between align-items-center mb-4 border-bottom border-secondary pb-4">
+                                <div>
+                                    <h6 class="text-white mb-0">Organic Turmeric</h6>
+                                    <span class="text-red small">Qty: 2 x ₹320</span>
+                                </div>
+                                <span class="text-light">₹ 640.00</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="">Subtotal</span>
+                                <span class="text-light fw-bold">₹ 1090.00</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-3">
+                                <span class="">Shipping</span>
+                                <span class="text-success">Free Shipping</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <span class="text-gold fs-5 fw-bold serif-font">Total</span>
+                                <span class="text-gold fs-4 fw-bold">₹ 1090.00</span>
+                            </div>
+
+                            <div class="payment-methods mb-4">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input custom-radio" type="radio" name="paymentMethod"
+                                        id="upi" checked>
+                                    <label class="form-check-label " for="upi">
+                                        UPI / Credit Card / Netbanking
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input custom-radio" type="radio" name="paymentMethod"
+                                        id="cod">
+                                    <label class="form-check-label " for="cod">
+                                        Cash on Delivery
+                                    </label>
+                                </div>
+                            </div>
+
+                            <a href="#" type="submit" class="btn btn-place-order w-100">
+                                Place Order
+                            </a>
+
+                            <div class="text-center mt-3">
+                                <span class="small"><i class="fas fa-shield-alt me-1"></i> SSL Secure
+                                    Payment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-black text-white pb-4">
+        <div class="container">
+            <div class="row justify-content-between">
+
+                <div class="col-lg-3 mb-4">
+                    <!-- <h2 class="serif-font text-red mb-3">REDSPICE.</h2> -->
+                    <div class="">
+                        <img src="assets/image/velour-logo.jpg" height="100" alt="">
+                    </div>
+                    <p class="small" style="line-height: 1.8;">
+                        Premium spices sourced ethically from the finest farms in India.
+                        We bring the authentic taste of tradition to the modern kitchen.
+                    </p>
+                    <div class="mt-4 social-media">
+                        <a href="#" class=" me-3 transition-hover"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class=" me-3 transition-hover"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class=" transition-hover"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 mb-4">
+                    <h6 class="text-uppercase mb-4 text-white" style="letter-spacing: 2px;">Quick Link</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2 footer-link-wrap">
+                            <a href="#" class="footer-link-animated">Home</a>
+                        </li>
+                        <li class="mb-2 footer-link-wrap">
+                            <a href="#" class="footer-link-animated">About Us</a>
+                        </li>
+                        <li class="mb-2 footer-link-wrap">
+                            <a href="#" class="footer-link-animated">Blog</a>
+                        </li>
+                        <li class="mb-2 footer-link-wrap">
+                            <a href="#" class="footer-link-animated">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2  mb-4">
+                    <h6 class="text-uppercase mb-4 text-white" style="letter-spacing: 2px;">Policy</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2 footer-link-wrap">
+                            <a href="#" class="footer-link-animated">Privacy Policy</a>
+                        </li>
+                        <li class="mb-2 footer-link-wrap">
+                            <a href="#" class="footer-link-animated">Terms & Conditions</a>
+                        </li>
+                        <li class="mb-2 footer-link-wrap">
+                            <a href="#" class="footer-link-animated">Refund Policy</a>
+                        </li>
+                        <li class="mb-2 footer-link-wrap">
+                            <a href="#" class="footer-link-animated">
+                                Cancellation Policy
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="col-lg-3 mb-4">
+                    <h6 class="text-uppercase mb-4 text-white" style="letter-spacing: 2px;">Get in Touch</h6>
+                    <ul class="list-unstyled small  social-media">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fas fa-map-marker-alt text-red me-3 mt-1"></i>
+                            <span>918 - Gala Empire,
+                                Opposite Doordarshan Tower,
+                                Drive - in Road , Thaltej,
+                                Ahmedabad - 380051.</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-envelope text-red me-3"></i>
+                            <a href="mailto:sales@velourspices.com"
+                                class="text-decoration-none  hover-red">sales@velourspices.com</a>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fa-solid fa-phone text-red me-3"></i>
+                            <a href="tel:+916356933345" class="text-decoration-none  hover-red">+91 63569 33345</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-top border-secondary pt-4 mt-4 text-center small text-muted">
+                <div class="text-white">
+                    &copy; 2025 Velour Spices Inc. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Scroll Reveal Script
+        window.addEventListener('scroll', reveal);
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+
+                if (revealtop < windowheight - revealpoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        // Trigger once on load
+        reveal();
+    </script>
+
+    <script>
+        function loadVideo(element, videoId) {
+            // 1. Add 'playing' class to hide info cards and buttons
+            element.classList.add('playing');
+
+            // 2. Create the iframe
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
+            iframe.setAttribute('width', '100%');
+            iframe.setAttribute('height', '100%');
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+
+            // 3. Style the iframe to fill the card
+            iframe.style.position = 'absolute';
+            iframe.style.top = '0';
+            iframe.style.left = '0';
+            iframe.style.zIndex = '10'; // On top of image
+
+            // 4. Append to the card
+            element.appendChild(iframe);
+        }
+    </script>
+</body>
+
+</html>
