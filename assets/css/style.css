@@ -1949,3 +1949,54 @@ select.custom-input {
     display: flex;
     align-items: flex-start;
 }
+
+.recipe-section {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.recipe-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid #1a1a1a;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+}
+
+.recipe-category {
+    color: var(--primary-red);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.recipe-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent-gold);
+}
+
+/* Dark Pagination */
+.custom-pagination .page-link {
+    background-color: var(--bg-secondary);
+    border: 1px solid #222;
+    color: var(--text-muted);
+    margin: 0 5px;
+    padding: 10px 18px;
+    transition: all 0.3s ease;
+}
+
+.custom-pagination .page-item.active .page-link {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+    color: var(--text-light);
+}
+
+.custom-pagination .page-link:hover:not(.active) {
+    background-color: #1a1a1a;
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
